@@ -57,8 +57,7 @@
 				 
 		         echo '</form>';
 			}
-			if (!empty($_POST) && !empty($_FILES['source']))
-				echo ($_FILES['source'] ? "Thanks for your submission" : "The file could not be uploaded");
+			if (move_uploaded_file($_FILES['source']['tmp_name'], $uploadfile))
          echo '</body></html>';
       }
 ?>
