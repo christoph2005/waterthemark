@@ -5,6 +5,7 @@
     
        $code = $_REQUEST["code"];
 	   
+	   /*
 	   // Read the cookie created by the JS API
 			$cookie = preg_replace("/^\"|\"$/i", "", $_COOKIE['fbs_' . $app_id]);
 			parse_str($cookie, $data);
@@ -20,6 +21,8 @@
 			
 			// It should work now
 			var_dump($fb->getUser());
+	   */
+	   
 	   
 	   /*foreach ($_REQUEST as $key => $value)
 	      echo '<p>('.$key.','.$value.')</p>';*/
