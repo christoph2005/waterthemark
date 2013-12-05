@@ -32,7 +32,7 @@
 		 
 			if(empty($_POST) || empty($_FILES['source']))
 			{
-		         echo '<form id="UploadForm" enctype="multipart/form-data" action="'. "http://waterthemark.herokuapp.com" .' "method="POST">';
+		         echo '<form id="UploadForm" enctype="multipart/form-data" action="'. '"http://waterthemark.herokuapp.com"' .' "method="POST">';
 				 
 			         echo 'Please choose a photo: ';
 			         echo '<input name="source" type="file"><br/><br/>';
