@@ -62,7 +62,7 @@
 				move_uploaded_file($_FILES['source']['tmp_name'], $target_path);
 			    echo "Stored in: " .$target_path.'<br>';
 	  
-				echo '<image src="'.$target_path. '" width = "800" height = "800"></image><br>';
+				echo '<image src="'.$target_path. '" width = "400"></image><br>';
 				
 			}
 		 
