@@ -5,8 +5,8 @@
     
        $code = $_REQUEST["code"];
 	   
-	   foreach ($_REQUEST as $key => $value)
-	      echo '<p>('.$key.','.$value.')</p>';
+	   /*foreach ($_REQUEST as $key => $value)
+	      echo '<p>('.$key.','.$value.')</p>';*/
 	   
 	   
        //Obtain the access_token with publish_stream permission 
