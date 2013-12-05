@@ -33,7 +33,7 @@
 			if(empty($_POST) || empty($_FILES['source']))
 			{
 		         echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
-				 
+				 echo phpinfo();
 				 echo 'POST: '; echo empty($_POST);
 				 echo '<br>';
 				 print_r($_POST);
