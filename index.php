@@ -7,7 +7,7 @@
 	   
 	   /*foreach ($_REQUEST as $key => $value)
 	      echo '<p>('.$key.','.$value.')</p>';*/
-	   /*
+	   
 	   
        //Obtain the access_token with publish_stream permission 
        if(empty($code)){
@@ -34,19 +34,20 @@
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
-*/
+
 
 		 $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
 		 
          echo '<html><body>';
 		 echo '<div id="fb-root"></div>';
+/* A form to upload a picture */		 
          echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
          echo 'Please choose a photo: ';
          echo '<input name="source" type="file"><br/><br/>';
          echo '<input type="submit" value="Upload"/><br/>';
          echo '</form>';
-		 
+/* A form to generate an HTTP Post */
 		 echo '<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">';
 		 echo '<datalist>';
 		 echo '<option name="source" type="file" value="'.$_POST["source"].'"></option>';
