@@ -26,17 +26,18 @@
           $access_token = $params['access_token'];
 
          // Show photo upload form to user and post to the Graph URL
-         $graph_url= "https://graph.facebook.com/me/photos?"
-         . "access_token=" .$access_token;
+         $graph_url= "https://graph.facebook.com/me/photos?". "access_token=" .$access_token;
 
          echo '<html><body>';
-         echo '<form enctype="multipart/form-data" action="'
-         .$graph_url .' "method="POST">';
-         echo 'Please choose a photo: ';
-         echo '<input name="source" type="file"><br/><br/>';
-         echo 'Say something about this photo: ';
-         echo '<input name="message" type="text" value=""><br/><br/>';
-         echo '<input type="submit" value="Upload"/><br/>';
+         echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
+			 echo('<script>var u =document.getElementById("UploadForm"); alert("u")');
+	         echo 'Please choose a photo: ';
+	         echo '<input name="source" type="file"><br/><br/>';
+			 
+	         echo 'Say something about this photo: ';
+	         echo '<input name="message" type="text" value=""><br/><br/>';
+	         echo '<input type="submit" value="Upload"/><br/>';
+		 
          echo '</form>';
          echo '</body></html>';
       }
