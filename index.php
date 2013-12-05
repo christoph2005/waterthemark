@@ -34,7 +34,7 @@
 			{
 		         echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
 				 echo phpinfo();
-				 echo 'POST: '; echo empty($_POST);
+				 echo 'Empty POST?: '; echo empty($_POST);
 				 echo '<br>';
 				 print_r($_POST);
 				 echo '<br>';
@@ -43,7 +43,7 @@
 				 echo '<br>';
 				 echo '<br>';
 				 
-				 echo 'FILES: '; echo empty($_FILES);
+				 echo 'Empty FILES?: '; echo empty($_FILES);
 				 echo '<br>';
 				 print_r($_FILES);
 				 echo '<br>';
@@ -57,7 +57,6 @@
 				 
 		         echo '</form>';
 			}
-			if (move_uploaded_file($_FILES['source']['tmp_name'], $uploadfile))
          echo '</body></html>';
       }
 ?>
