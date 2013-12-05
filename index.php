@@ -32,7 +32,7 @@
 		 
 			if(empty($_POST) || empty($_FILES['source']))
 			{
-		         echo '<form id="UploadForm" enctype="multipart/form-data" action="'. './index.php"' .' method="POST">';
+		         echo '<form id="UploadForm" enctype="multipart/form-data" action="./index.php" method="POST">';
 				 echo 'POST: '; echo empty($_POST);
 				 echo '<br>';
 				 print_r($_POST);
@@ -52,7 +52,7 @@
 		         echo '</form>';
 			}
 			if (!empty($_POST) && !empty($_FILES['source']))
-				echo ($uploaded ? "Thanks for your submission" : "The file could not be uploaded");
+				echo ($_FILES['source'] ? "Thanks for your submission" : "The file could not be uploaded");
          echo '</body></html>';
       }
 ?>
