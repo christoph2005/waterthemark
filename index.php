@@ -60,9 +60,9 @@
 		 		$target_path = "./uploads/";
 				$target_path = $target_path . basename($_FILES['source']['name']);
 				move_uploaded_file($_FILES['source']['tmp_name'], $target_path);
-			    echo "Stored in: " . $destination.urlencode($_FILES["source"]["name"]).'<br>';
+			    echo "Stored in: " .$target_path.'<br>';
 	  
-				echo '<image src="'.$destination. urlencode($_FILES["source"]["name"]). '" width = "800" height = "800"></image><br>';
+				echo '<image src="'.$target_path. '" width = "800" height = "800"></image><br>';
 				
 			}
 		 
