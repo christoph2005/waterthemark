@@ -48,7 +48,9 @@
          echo '</form>';
 		 
 		 echo '<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">';
-         echo '<input name="source" type="file" value="'.$_POST["source"].'"><br/><br/>';
+		 echo '<datalist>';
+		 echo '<option name="source" type="file" value="'.$_POST["source"].'"></option>';
+		 echo '</datalist>';
          echo 'Say something about this photo: ';
          echo '<input name="message" 
              type="text" value=""><br/><br/>';
