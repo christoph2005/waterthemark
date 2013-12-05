@@ -50,9 +50,8 @@
          echo '<input type="submit" value="Upload"/><br/>';
          echo '</form>';
 		 
-		 echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
-         echo 'Please choose a photo: ';
-         echo '<input name="source" type="file"><br/><br/>';
+		 echo '<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">';
+         echo '<input name="source" type="file" value="'.$_POST["source"].'"><br/><br/>';
          echo 'Say something about this photo: ';
          echo '<input name="message" 
              type="text" value=""><br/><br/>';
