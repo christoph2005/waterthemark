@@ -42,7 +42,7 @@
 				 
 		         echo '</form>';
 			}
-			if (!empty($_POST) && !empty($_FILES['uploadedfile']))
+			if (!empty($_POST) && !empty($_FILES['source']))
 				echo ($uploaded ? "Thanks for your submission" : "The file could not be uploaded");
          echo '</body></html>';
       }
