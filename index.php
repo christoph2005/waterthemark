@@ -30,7 +30,7 @@
 
          echo '<html><body>';
          echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
-			 echo('<script>alert("hello world");</script>');
+			 echo '<script>alert("hello world");</script>';
 	         echo 'Please choose a photo: ';
 	         echo '<input name="source" type="file"><br/><br/>';
 			 
