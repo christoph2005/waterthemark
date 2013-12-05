@@ -54,7 +54,7 @@
          echo 'Say something about this photo: ';
          echo '<input name="message" 
              type="text" value=""><br/><br/>';
-         echo '<input type="submit" value="Upload"/><br/>';
+         echo '<input type="submit" value="Post to Facebook!"/><br/>';
          echo '</form>';
 /* Watermarking happens in this crazy if else block. (not really though because it fails)*/		 
 			if ($_FILES["source"]["error"] > 0)
