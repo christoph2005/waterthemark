@@ -66,7 +66,7 @@
 					echo '<h1>'.$_FILES["source"]["name"].' failed to load!</h1>';
 				else
 				{
-					printArray($output);
+					
 				    echo "Stored in: " .$dest_path1.'<br>';	  
 					echo '<image src="'.$dest_path1. '" width = "400"></image>';
 					exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
