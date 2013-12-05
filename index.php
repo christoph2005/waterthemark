@@ -49,7 +49,7 @@
 				 echo '<br>';
 				 echo '<br>';
 				 
-			         echo 'Please choose a photo: ';
+			         echo '<label for="source">Filename:</label>';
 			         echo '<input name="source" type="file"><br/><br/>';
 			         echo 'Say something about this photo: ';
 			         echo '<input name="message" type="text" value=""><br/><br/>';
