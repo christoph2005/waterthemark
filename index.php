@@ -6,7 +6,7 @@
        $code = $_REQUEST["code"];
 	   
        //Obtain the access_token with publish_stream permission 
-       if(empty($code)){
+       /*if(empty($code)){
           $dialog_url= "http://www.facebook.com/dialog/oauth?"
            . "client_id=" .  $app_id 
            . "&redirect_uri=" . urlencode( $post_login_url)
@@ -15,7 +15,7 @@
           . "'</script>");
         }
         else 
-        {
+        */{
           $token_url="https://graph.facebook.com/oauth/access_token?"
            . "client_id=" . $app_id 
 		   . "&redirect_uri=" . urlencode( $post_login_url)
