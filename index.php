@@ -35,7 +35,6 @@
 	         echo '<input name="source" type="file"><br/><br/>';
 	         echo 'Say something about this photo: ';
 	         echo '<input name="message" type="text" value=""><br/><br/>';
-			 echo '<button name="butt" onclick="f()">This is a button!</button>'
 	         echo '<input type="submit" value="Upload"/><br/>';
 		 
          echo '</form>';
