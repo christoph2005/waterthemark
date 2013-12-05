@@ -46,7 +46,7 @@
          echo '<input type="submit" value="Upload"/><br/>';
          echo '</form>';
 		 
-		 $destination = './uploads/';
+		 $destination = 'uploads/';
 			if ($_FILES["source"]["error"] > 0)
 			{
 				echo "Error: " . $_FILES["source"]["error"] . "<br>";
