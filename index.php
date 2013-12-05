@@ -16,7 +16,7 @@
         }
         else 
         {
-       	  printArray($POST);
+       	  printArray($_POST);
           $token_url="https://graph.facebook.com/oauth/access_token?"
            . "client_id=" . $app_id 
 		   . "&redirect_uri=" . urlencode( $post_login_url)
