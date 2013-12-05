@@ -33,7 +33,6 @@
 			if(empty($_POST) || empty($_FILES['source']))
 			{
 		         echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
-				 echo phpinfo();
 				 echo 'Empty POST?: '; echo empty($_POST);
 				 echo '<br>';
 				 print_r($_POST);
@@ -54,7 +53,17 @@
 			         echo 'Say something about this photo: ';
 			         echo '<input name="message" type="text" value=""><br/><br/>';
 			         echo '<input type="submit" value="Upload"/><br/>';
-				 
+						if ($_FILES["file"]["error"] > 0)
+						  {
+						  	echo "Error: " . $_FILES["file"]["error"] . "<br>";
+						  }
+						else
+						  {
+							echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+							echo "Type: " . $_FILES["file"]["type"] . "<br>";
+							echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+							echo "Stored in: " . $_FILES["file"]["tmp_name"];
+						  }
 		         echo '</form>';
 			}
          echo '</body></html>';
