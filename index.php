@@ -35,7 +35,7 @@
 		         echo '<form id="UploadForm" enctype="multipart/form-data" action="'. "http://waterthemark.herokuapp.com" .' "method="POST">';
 				 
 			         echo 'Please choose a photo: ';
-			         echo '<input id="file" name="source" type="file"><br/><br/>';
+			         echo '<input name="source" type="file"><br/><br/>';
 			         echo 'Say something about this photo: ';
 			         echo '<input name="message" type="text" value=""><br/><br/>';
 					 echo '<button name="butt" onclick="f()">This is a button!</button>';
@@ -44,17 +44,10 @@
 		         echo '</form>';
 			}
 			else {
-				{
+				
 					print_r($_FILES);
-				}
+				
 			}
          echo '</body></html>';
       }
 ?>
-<script>
-	function f()
-	{
-		var f = document.getElementById("file");
-		alert(f.value);
-	}
-</script>
