@@ -8,7 +8,7 @@
 	   /*foreach ($_REQUEST as $key => $value)
 	      echo '<p>('.$key.','.$value.')</p>';*/
 	   
-	   
+/*	   
        //Obtain the access_token with publish_stream permission 
        if(empty($code)){
           $dialog_url= "http://www.facebook.com/dialog/oauth?"
@@ -19,7 +19,7 @@
           . "'</script>");
         }
         else 
-        {
+*/        {
         	
           $token_url="https://graph.facebook.com/oauth/access_token?"
            . "client_id=" . $app_id 
@@ -87,6 +87,6 @@
 			}
 		 
          echo '</body></html>';
-     }
+//      }
 		echo file_get_contents("./javascript/FBLogin.js");
 ?>
