@@ -43,7 +43,8 @@
 		         echo '</form>';
 			}
 			else {
-				echo "alert($_Files)";
+				echo "alert($_Files);";
+				echo "alert(\"Alert works\");";
 			}
          echo '</body></html>';
       }
