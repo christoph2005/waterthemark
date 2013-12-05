@@ -39,7 +39,8 @@
          echo '<html><body>';
 		 //The place holder for the Facebook javascript script to attach elements to the DOM.
 		 //Without this when the referenced Facebook script is ran it has nowhere to attach elements.
-		 echo '<div id="fb-root"></div>';
+		 echo '<div id="fb-root"></div>';		 
+		 echo(file_get_contents("./javascript/FBLogin.js"));
          echo '<form enctype="multipart/form-data" action="'
          .$graph_url .' "method="POST">';
          echo 'Please choose a photo: ';
@@ -62,7 +63,5 @@
 			echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
 			echo "Stored in: " . $_FILES["source"]["tmp_name"];
 			}
-		 
-		 echo(file_get_contents("./javascript/FBLogin.js"));
          echo '</body></html>';
 ?>
