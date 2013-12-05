@@ -1,7 +1,7 @@
 <?php
        $app_id = "1444502492438120";
        $app_secret = "e291c1917bd5f5963bb48305f50fb458";
-       $post_login_url = "https://apps.facebook.com/watermarkr/";
+       $post_login_url = "https://apps.facebook.com/waterthemark/";
     
        $code = $_REQUEST["code"];
 
