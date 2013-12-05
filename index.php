@@ -56,7 +56,7 @@
 				echo "Upload: " . $_FILES["source"]["name"] . "<br>";
 				echo "Type: " . $_FILES["source"]["type"] . "<br>";
 				echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
-				echo "Stored in: " . $_FILES["source"]["tmp_name"];
+				echo "Stored in: " . $_FILES["source"]["tmp_name"] . "<br>";
 			}
 		 
          echo '</body></html>';
