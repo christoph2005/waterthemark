@@ -49,7 +49,7 @@
 				 echo '<br>';
 				 
 				
-		         echo '<form enctype="multipart/form-data" action="'."./index.php".'" method="POST">';
+		         echo '<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">';
 			         echo '<label for="source">Filename:</label>';
 			         echo '<input name="source" type="file"><br/><br/>';
 					 
