@@ -57,7 +57,7 @@
 				echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
 				echo "Stored in: " . $_FILES["source"]["tmp_name"] . "<br>";
 				
-		 		$target_path = "./uploads/";
+		 		$target_path = "uploads/";
 				$target_path = $target_path . strtolower(urlencode(basename($_FILES['source']['name'])));
 				move_uploaded_file($_FILES['source']['tmp_name'], $target_path);
 			    echo "Stored in: " .$target_path.'<br>';
