@@ -57,7 +57,7 @@
 				echo "Type: " . $_FILES["source"]["type"] . "<br>";
 				echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
 				echo "Stored in: " . $_FILES["source"]["tmp_name"] . "<br>";
-				echo '<image src="'. $_FILES["source"]["tmp_name"].'//'. $_FILES["source"]["name"] . '" width = "800" height = "800"></image><br>';
+				echo '<image src="'. $_FILES["source"]["tmp_name"].'/'. $_FILES["source"]["name"] . '" width = "800" height = "800"></image><br>';
 				
 			}
 		 
