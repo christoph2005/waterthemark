@@ -16,27 +16,20 @@
         }
         else 
         {
-       	  //if (!$POST["access_token"])
-		  {
-	          $token_url="https://graph.facebook.com/oauth/access_token?"
-	           . "client_id=" . $app_id 
-			   . "&redirect_uri=" . urlencode( $post_login_url)
-	           . "&client_secret=" . $app_secret
-	           . "&code=" . $code;
-	          $response = file_get_contents($token_url);
-	          $params = null;
-	          parse_str($response, $params);
-	          $access_token = $params['access_token'];
-			  $_POST['access_token']= $access_token;
-		  }
-		  /*else
-		  {
-		  	$access_token=$POST["access_token"];
-		  }*/
+          $token_url="https://graph.facebook.com/oauth/access_token?"
+           . "client_id=" . $app_id 
+		   . "&redirect_uri=" . urlencode( $post_login_url)
+           . "&client_secret=" . $app_secret
+           . "&code=" . $code;
+          $response = file_get_contents($token_url);
+          $params = null;
+          parse_str($response, $params);
+          $access_token = $params['access_token'];
 
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
+
          echo '<html><body>';
          echo '<form enctype="multipart/form-data" action="'
          .$graph_url .' "method="POST">';
