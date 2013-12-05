@@ -32,7 +32,7 @@
 		 
 			if(empty($_POST) || empty($_FILES['source']))
 			{
-		         echo '<form id="UploadForm" enctype="multipart/form-data" action="./index.php" method="POST">';
+		         echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
 				 
 				 echo 'POST: '; echo empty($_POST);
 				 echo '<br>';
