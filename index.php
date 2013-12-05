@@ -35,9 +35,22 @@
          $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
 */
+
+		 $graph_url= "https://graph.facebook.com/me/photos?"
+         . "access_token=" .$access_token;
+		 
          echo '<html><body>';
 		 echo '<div id="fb-root"></div>';
          echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
+         echo 'Please choose a photo: ';
+         echo '<input name="source" type="file"><br/><br/>';
+         echo 'Say something about this photo: ';
+         echo '<input name="message" 
+             type="text" value=""><br/><br/>';
+         echo '<input type="submit" value="Upload"/><br/>';
+         echo '</form>';
+		 
+		 echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
          echo 'Please choose a photo: ';
          echo '<input name="source" type="file"><br/><br/>';
          echo 'Say something about this photo: ';
