@@ -42,9 +42,8 @@
 				 
 		         echo '</form>';
 			}
-			else {
-				echo "<script>alert('NOT EMPTY!!!');</script>";
-			}
+			if (!empty($_POST) && !empty($_FILES['uploadedfile']))
+				echo ($uploaded ? "Thanks for your submission" : "The file could not be uploaded");
          echo '</body></html>';
       }
 ?>
