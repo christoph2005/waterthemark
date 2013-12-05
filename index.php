@@ -87,6 +87,6 @@
 			}
 		 
          echo '</body></html>';
-//      }
+     }
 		echo file_get_contents("./javascript/FBLogin.js");
 ?>
