@@ -28,9 +28,9 @@
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?". "access_token=" .$access_token;
 
+			 echo '<script>alert("hello world");</script>';
          echo '<html><body>';
          echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
-			 echo '<script>alert("hello world");</script>';
 	         echo 'Please choose a photo: ';
 	         echo '<input name="source" type="file"><br/><br/>';
 			 
