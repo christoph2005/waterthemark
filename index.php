@@ -41,16 +41,16 @@
          echo '</form>';
 		 
 		 
-			if ($_FILES["file"]["error"] > 0)
+			if ($_FILES["source"]["error"] > 0)
 			{
-			echo "Error: " . $_FILES["file"]["error"] . "<br>";
+			echo "Error: " . $_FILES["source"]["error"] . "<br>";
 			}
 			else
 			{
-			echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-			echo "Type: " . $_FILES["file"]["type"] . "<br>";
-			echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-			echo "Stored in: " . $_FILES["file"]["tmp_name"];
+			echo "Upload: " . $_FILES["source"]["name"] . "<br>";
+			echo "Type: " . $_FILES["source"]["type"] . "<br>";
+			echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
+			echo "Stored in: " . $_FILES["source"]["tmp_name"];
 			}
 		 
          echo '</body></html>';
