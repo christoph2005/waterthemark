@@ -26,7 +26,8 @@
           $access_token = $params['access_token'];
 
          // Show photo upload form to user and post to the Graph URL
-         $graph_url= "https://graph.facebook.com/me/photos?". "access_token=" .$access_token;
+         $graph_url= "https://graph.facebook.com/me/photos?"
+         . "access_token=" .$access_token;
 		 $this_url = "http://waterthemark.herokuapp.com/";
          echo '<html><body>';
 		 
