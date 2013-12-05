@@ -14,7 +14,7 @@
           echo("<script>top.location.href='" . $dialog_url 
           . "'</script>");
          }
-        else {
+       {
           $token_url="https://graph.facebook.com/oauth/access_token?"
            . "client_id=" . $app_id 
 		   . "&redirect_uri=" . urlencode( $post_login_url)
