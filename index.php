@@ -31,14 +31,17 @@
 			 echo '<script>alert("hello world");</script>';
          echo '<html><body>';
          echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
+		 
 	         echo 'Please choose a photo: ';
 	         echo '<input name="source" type="file"><br/><br/>';
-			 
 	         echo 'Say something about this photo: ';
 	         echo '<input name="message" type="text" value=""><br/><br/>';
-	         echo '<input type="submit" value="Upload"/><br/>';
+	         echo '<input type="submit" value="Upload" onchange="f()"/><br/>';
 		 
          echo '</form>';
          echo '</body></html>';
       }
 ?>
+<script>
+	function f(){alert("HELLO");}
+</script>
