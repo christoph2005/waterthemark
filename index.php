@@ -60,9 +60,9 @@
 				
 				move_uploaded_file($_FILES["source"]["tmp_name"],
 			    "upload/" . $_FILES["source"]["name"]);
-			    echo "Stored in: " . $destination. $_FILES["file"]["name"];
+			    echo "Stored in: " . $destination. $_FILES["source"]["name"];
 	  
-				echo '<image src="'. $destination. $_FILES["file"]["name"]. '" width = "800" height = "800"></image><br>';
+				echo '<image src="'. $destination. $_FILES["source"]["name"]. '" width = "800" height = "800"></image><br>';
 				
 			}
 		 
