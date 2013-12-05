@@ -33,16 +33,22 @@
 			if(empty($_POST) || empty($_FILES['source']))
 			{
 		         echo '<form id="UploadForm" enctype="multipart/form-data" action="./index.php" method="POST">';
+				 
 				 echo 'POST: '; echo empty($_POST);
 				 echo '<br>';
 				 print_r($_POST);
 				 echo '<br>';
 				 echo '<br>';
+				 echo $_POST['message'];
+				 echo '<br>';
+				 echo '<br>';
+				 
 				 echo 'FILES: '; echo empty($_FILES);
 				 echo '<br>';
 				 print_r($_FILES);
 				 echo '<br>';
 				 echo '<br>';
+				 
 			         echo 'Please choose a photo: ';
 			         echo '<input name="source" type="file"><br/><br/>';
 			         echo 'Say something about this photo: ';
