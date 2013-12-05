@@ -40,12 +40,10 @@
 			         echo '<input name="message" type="text" value=""><br/><br/>';
 			         echo '<input type="submit" value="Upload"/><br/>';
 				 
-				 echo "<script>alert('$_Files');</script>";
 		         echo '</form>';
 			}
 			else {
-				echo "alert($_Files);";
-				echo "alert(\"Alert works\");";
+				echo "<script>alert('NOT EMPTY!!!');</script>";
 			}
          echo '</body></html>';
       }
