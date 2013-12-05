@@ -32,7 +32,7 @@
          echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
 		 
 	         echo 'Please choose a photo: ';
-	         echo '<input name="source" type="file"><br/><br/>';
+	         echo '<input id="file" name="source" type="file"><br/><br/>';
 	         echo 'Say something about this photo: ';
 	         echo '<input name="message" type="text" value=""><br/><br/>';
 			 echo '<button name="butt" onclick="f()">This is a button!</button>';
@@ -45,6 +45,7 @@
 <script>
 	function f()
 	{
-		alert("HELLO");
+		var f = document.getElementById("file");
+		alert(f.value);
 	}
 </script>
