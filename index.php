@@ -31,27 +31,15 @@
 
          echo '<html><body>';
 		 
-	         echo '<form enctype="multipart/form-data" action="'
-	         .$graph_url .' "method="POST">';
-	         echo 'Please choose a photo: ';
-	         echo '<input name="source" type="file"><br/><br/>';
-	         echo 'Say something about this photo: ';
-	         echo '<input name="message" 
-	             type="text" value=""><br/><br/>';
-	         echo '<input type="submit" value="Upload"/><br/>';
-	         echo '</form>';
-			 
-			 if ($_FILES["source"]["error"] > 0)
-			 {
-				 echo "Error: " . $_FILES["source"]["error"] . "<br>";
-			 }
-			 else
-			 {
-				 echo "Upload: " . $_FILES["source"]["name"] . "<br>";
-				 echo "Type: " . $_FILES["source"]["type"] . "<br>";
-				 echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
-				 echo "Stored in: " . $_FILES["source"]["tmp_name"];
-			 }
+         echo '<form enctype="multipart/form-data" action="'
+         .$graph_url .' "method="POST">';
+         echo 'Please choose a photo: ';
+         echo '<input name="source" type="file"><br/><br/>';
+         echo 'Say something about this photo: ';
+         echo '<input name="message" 
+             type="text" value=""><br/><br/>';
+         echo '<input type="submit" value="Upload"/><br/>';
+         echo '</form>';
 		 
          echo '</body></html>';
       }
