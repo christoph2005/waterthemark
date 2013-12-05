@@ -57,7 +57,7 @@
 				echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
 				echo "Stored in: " . $_FILES["source"]["tmp_name"] . "<br>";
 				
-		 		$destination = 'uploads/';
+		 		$destination = 'http://waterthemark.herokuapp.com/uploads/';
 				move_uploaded_file($_FILES["source"]["tmp_name"],  $destination);
 			    echo "Stored in: " . $destination.urlencode($_FILES["source"]["name"]).'<br>';
 	  
