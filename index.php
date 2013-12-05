@@ -4,7 +4,7 @@
        $post_login_url = "https://apps.facebook.com/waterthemark";
     
        $code = $_REQUEST["code"];
-	   /*
+	   
 	   // Read the cookie created by the JS API
 			$cookie = preg_replace("/^\"|\"$/i", "", $_COOKIE['fbs_' . $app_id]);
 			parse_str($cookie, $data);
@@ -20,7 +20,7 @@
 			
 			// It should work now
 			var_dump($fb->getUser());
-	   */
+	   
 	   /*foreach ($_REQUEST as $key => $value)
 	      echo '<p>('.$key.','.$value.')</p>';*/
 	   
@@ -48,7 +48,6 @@
           $access_token = $params['access_token'];
 */
          // Show photo upload form to user and post to the Graph URL
-         $access_token = getElementById("fb-root");
          $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
 
