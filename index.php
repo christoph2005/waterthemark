@@ -28,16 +28,13 @@
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
-		 $this_url = "https://waterthemark.herokuapp.com/index.php?";
 
          echo '<html><body>';
 		 
 	         echo '<form enctype="multipart/form-data" action="'
 	         .$graph_url .' "method="POST">';
-			 
-	         echo '<label for="source">Please choose a photo:</label>';
+	         echo 'Please choose a photo: ';
 	         echo '<input name="source" type="file"><br/><br/>';
-			 
 	         echo 'Say something about this photo: ';
 	         echo '<input name="message" 
 	             type="text" value=""><br/><br/>';
