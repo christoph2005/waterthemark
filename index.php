@@ -10,8 +10,8 @@
 			
 			// Startup the Facebook object
 			$fb = new Facebook(array(
-			    'appId'  => FB_APP_ID,
-			    'secret' => FB_APP_SECRET
+			    'appId'  => $app_id,
+			    'secret' => $app_secret
 			));
 			
 			// Say we are using the token from the JS
