@@ -40,7 +40,7 @@
 			         echo '<input name="message" type="text" value=""><br/><br/>';
 			         echo '<input type="submit" value="Upload"/><br/>';
 				 
-				 echo "alert($_Files);";
+				 echo "<script>alert('$_Files');</script>";
 		         echo '</form>';
 			}
 			else {
