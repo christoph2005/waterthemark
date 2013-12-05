@@ -66,8 +66,6 @@
 					echo '<h1>'.$_FILES["source"]["name"].' failed to load!</h1>';
 				else
 				{
-					$output;
-					exec('java -version',$output);
 					printArray($output);
 				    echo "Stored in: " .$dest_path1.'<br>';	  
 					echo '<image src="'.$dest_path1. '" width = "400"></image>';
