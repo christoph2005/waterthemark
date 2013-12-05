@@ -29,17 +29,25 @@
          $graph_url= "https://graph.facebook.com/me/photos?". "access_token=" .$access_token;
 
          echo '<html><body>';
-         echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
 		 
-	         echo 'Please choose a photo: ';
-	         echo '<input id="file" name="source" type="file"><br/><br/>';
-	         echo 'Say something about this photo: ';
-	         echo '<input name="message" type="text" value=""><br/><br/>';
-			 echo '<button name="butt" onclick="f()">This is a button!</button>';
-			 echo $graph_url;
-	         echo '<input type="submit" value="Upload"/><br/>';
-		 
-         echo '</form>';
+			if(empty($_POST) || empty($_FILES['source']))
+			{
+		         echo '<form id="UploadForm" enctype="multipart/form-data" action="'. "http://waterthemark.herokuapp.com" .' "method="POST">';
+				 
+			         echo 'Please choose a photo: ';
+			         echo '<input id="file" name="source" type="file"><br/><br/>';
+			         echo 'Say something about this photo: ';
+			         echo '<input name="message" type="text" value=""><br/><br/>';
+					 echo '<button name="butt" onclick="f()">This is a button!</button>';
+			         echo '<input type="submit" value="Upload"/><br/>';
+				 
+		         echo '</form>';
+			}
+			else {
+				{
+					print_r($_FILES);
+				}
+			}
          echo '</body></html>';
       }
 ?>
