@@ -1,7 +1,7 @@
 <?php
-       $app_id = "1444502492438120";
-       $app_secret = "e291c1917bd5f5963bb48305f50fb458";
-       $post_login_url = "https://apps.facebook.com/waterthemark/";
+       $app_id = "541615149259275";
+       $app_secret = "e4d4490f5614a7a814f1f0e2ad8d7c35";
+       $post_login_url = "https://apps.facebook.com/watermarkr";
     
        $code = $_REQUEST["code"];
 
@@ -28,50 +28,17 @@
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?"
          . "access_token=" .$access_token;
-		 $this_url = "http://waterthemark.herokuapp.com/";
+
          echo '<html><body>';
-		 
-			if(empty($_POST) || empty($_FILES['source']))
-			{
-				
-				 echo 'Empty POST?: '; echo empty($_POST);
-				 echo '<br>';
-				 print_r($_POST);
-				 echo '<br>';
-				 echo '<br>';
-				 echo 'message: '.$_POST['message'];
-				 echo '<br>';
-				 echo '<br>';
-				 
-				 echo 'Empty FILES?: '; echo empty($_FILES);
-				 echo '<br>';
-				 print_r($_FILES);
-				 echo '<br>';
-				 echo '<br>';
-				 
-				
-		         echo '<form enctype="multipart/form-data" action="'
+         echo '<form enctype="multipart/form-data" action="'
          .$graph_url .' "method="POST">';
-			         echo '<label for="source">Filename:</label>';
-			         echo '<input name="source" type="file"><br/><br/>';
-					 
-			         echo '<label for="message">Say something about this photo:</label>';
-			         echo '<input name="message" type="text" value=""><br/><br/>';
-					 
-			         echo '<input type="submit" value="Upload"/><br/>';
-						if ($_FILES["source"]["error"] > 0)
-						  {
-						  	echo "Error: " . $_FILES["source"]["error"] . "<br>";
-						  }
-						else
-						  {
-							echo "Upload: " . $_FILES["source"]["name"] . "<br>";
-							echo "Type: " . $_FILES["source"]["type"] . "<br>";
-							echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
-							echo "Stored in: " . $_FILES["source"]["tmp_name"];
-						  }
-		         echo '</form>';
-			}
+         echo 'Please choose a photo: ';
+         echo '<input name="source" type="file"><br/><br/>';
+         echo 'Say something about this photo: ';
+         echo '<input name="message" 
+             type="text" value=""><br/><br/>';
+         echo '<input type="submit" value="Upload"/><br/>';
+         echo '</form>';
          echo '</body></html>';
       }
 ?>
