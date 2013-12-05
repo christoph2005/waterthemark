@@ -28,7 +28,6 @@
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?". "access_token=" .$access_token;
 
-			 echo '<script>alert("hello world");</script>';
          echo '<html><body>';
          echo '<form id="UploadForm" enctype="multipart/form-data" action="'.$graph_url .' "method="POST">';
 		 
@@ -36,12 +35,16 @@
 	         echo '<input name="source" type="file"><br/><br/>';
 	         echo 'Say something about this photo: ';
 	         echo '<input name="message" type="text" value=""><br/><br/>';
-	         echo '<input type="submit" value="Upload" onclick="f()"/><br/>';
+			 echo '<button name="butt" onclick="f()">This is a button!</button>'
+	         echo '<input type="submit" value="Upload"/><br/>';
 		 
          echo '</form>';
          echo '</body></html>';
       }
 ?>
 <script>
-	function f(){alert("HELLO");}
+	function f()
+	{
+		alert("HELLO");
+	}
 </script>
