@@ -46,7 +46,7 @@
          echo '<input type="submit" value="Upload"/><br/>';
          echo '</form>';
 		 
-		 
+		 $destination = './uploads/';
 			if ($_FILES["source"]["error"] > 0)
 			{
 				echo "Error: " . $_FILES["source"]["error"] . "<br>";
@@ -57,7 +57,12 @@
 				echo "Type: " . $_FILES["source"]["type"] . "<br>";
 				echo "Size: " . ($_FILES["source"]["size"] / 1024) . " kB<br>";
 				echo "Stored in: " . $_FILES["source"]["tmp_name"] . "<br>";
-				echo '<image src="'. $_FILES["source"]["tmp_name"].'/'. $_FILES["source"]["name"] . '" width = "800" height = "800"></image><br>';
+				
+				move_uploaded_file($_FILES["source"]["tmp_name"],
+			    "upload/" . $_FILES["source"]["name"]);
+			    echo "Stored in: " . $destination. $_FILES["file"]["name"];
+	  
+				echo '<image src="'. $destination. $_FILES["file"]["name"]. '" width = "800" height = "800"></image><br>';
 				
 			}
 		 
