@@ -27,7 +27,7 @@
 
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?". "access_token=" .$access_token;
-		 $this_url = "http://waterthemark.herokuapp.com?";
+		 $this_url = "http://waterthemark.herokuapp.com/index.php";
          echo '<html><body>';
 		 
 			if(empty($_POST) || empty($_FILES['source']))
@@ -49,7 +49,7 @@
 				 echo '<br>';
 				 
 				
-		         echo '<form enctype="multipart/form-data" action="./index.php" method="POST">';
+		         echo '<form enctype="multipart/form-data" action="'.$this_url.'" method="POST">';
 			         echo '<label for="source">Filename:</label>';
 			         echo '<input name="source" type="file"><br/><br/>';
 					 
