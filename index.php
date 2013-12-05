@@ -59,9 +59,9 @@
 				
 		 		$destination = './uploads/';
 				move_uploaded_file($_FILES["source"]["tmp_name"],  $destination);
-			    echo "Stored in: " . $destination.'/'. $_FILES["source"]["name"];
+			    echo "Stored in: " . $destination.urlencode($_FILES["source"]["name"]).'<br>';
 	  
-				echo '<image src="'.urlencode($destination. $_FILES["source"]["name"]). '" width = "800" height = "800"></image><br>';
+				echo '<image src="'.$destination. urlencode($_FILES["source"]["name"]). '" width = "800" height = "800"></image><br>';
 				
 			}
 		 
