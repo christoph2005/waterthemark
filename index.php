@@ -16,7 +16,7 @@
         }
         else 
         {
-       	  if (empty($POST["access_token"]))
+       	  if (!$POST["access_token"])
 		  {
 	          $token_url="https://graph.facebook.com/oauth/access_token?"
 	           . "client_id=" . $app_id 
@@ -32,6 +32,7 @@
 		  else
 		  {
 		  	$access_token=$POST["access_token"];
+		  }
 
          // Show photo upload form to user and post to the Graph URL
          $graph_url= "https://graph.facebook.com/me/photos?"
