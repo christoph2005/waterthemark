@@ -8,7 +8,7 @@
 	   
   $config = array(
     'appId' => $app_id,
-    'secret' => $app_secret),
+    'secret' => $app_secret,
     'fileUpload' => true,
     'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
   );
