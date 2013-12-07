@@ -75,7 +75,7 @@
 <body>
 <!--Your Impelementation goes below here-->		
 <script>
-
+sayMyName();
 </script>
 </body>
 <footer>
