@@ -1,7 +1,7 @@
 <?php
   // Remember to copy files from the SDK's src/ directory to a
   // directory in your application on the server, such as php-sdk/
-  require_once('facebook-sdk/src/facebook.php');
+  require_once('./facebook-sdk/src/facebook.php');
        $app_id = "541615149259275";
        $app_secret = "e4d4490f5614a7a814f1f0e2ad8d7c35";
        $post_login_url = "https://apps.facebook.com/watermarkr";
