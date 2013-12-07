@@ -16,7 +16,7 @@
   $facebook = new Facebook($config);
   $user_id = $facebook->getUser();
 
-  $photo = './mypic.png'; // Path to the photo on the local filesystem
+  $photo = './uploads/OrigLena.png'; // Path to the photo on the local filesystem
   $message = 'Photo upload via the PHP SDK!';
 ?>
 <html>
