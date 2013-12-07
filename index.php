@@ -27,7 +27,7 @@
   if ($debug)
   	echo ' $user_id = getUser();';
 
-  $photo = './uploads/OrigLena.png'; // Path to the photo on the local filesystem
+  $photo = 'http://waterthemark.herokuapp.com/uploads/OrigLena.png'; // Path to the photo on the local filesystem
   $message = 'Photo upload via the PHP SDK!';
 ?>
 <html>
