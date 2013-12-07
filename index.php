@@ -1,6 +1,7 @@
 <!Doctype html>
 <head></head>
 <header><div id="fb-root"></div></header>
+<?php echo(file_get_contents('./javascript/FBLogin.js'));	?>
 <body>
 <!--Your Impelementation goes below here-->		
 <script>
@@ -10,6 +11,6 @@
 </script>
 </body>
 <footer>
-<?php echo(file_get_contents('./javascript/FBLogin.js'));	?>
+
 </footer>
 </html>
