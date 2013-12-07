@@ -1,10 +1,15 @@
 <?php
+  $debug = true;
   // Remember to copy files from the SDK's src/ directory to a
   // directory in your application on the server, such as php-sdk/
+  if ($debug)
+  	echo " before require_once()";
   require_once('./facebook-sdk/src/facebook.php');
        $app_id = "541615149259275";
        $app_secret = "e4d4490f5614a7a814f1f0e2ad8d7c35";
        $post_login_url = "https://apps.facebook.com/watermarkr";
+   if ($debug)
+      echo "After require_once()";
 	   
   $config = array(
     'appId' => $app_id,
@@ -14,7 +19,11 @@
   );
 
   $facebook = new Facebook($config);
+  if($debug)
+  	echo ' $facebook object made';
   $user_id = $facebook->getUser();
+  if ($debug)
+  	echo ' $user_id = getUser();';
 
   $photo = './uploads/OrigLena.png'; // Path to the photo on the local filesystem
   $message = 'Photo upload via the PHP SDK!';
