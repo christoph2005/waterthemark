@@ -5,6 +5,6 @@
 	
 </body>
 <footer>
-<?php file_get_contents('./javascript/FBLogin.js');	?>
+<?php echo(file_get_contents('./javascript/FBLogin.js'));	?>
 </footer>
 </html>
