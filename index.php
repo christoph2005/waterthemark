@@ -31,7 +31,7 @@
   $message = 'Photo upload via the PHP SDK!';
 ?>
 <html>
-  <head><image src=<?php echo $photo; ?></image></head>
+  <head><image src='"'.<?php echo $photo; ?>.'"'</image></head>
   <body>
 
   <?php
