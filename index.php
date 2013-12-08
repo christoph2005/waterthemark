@@ -68,8 +68,7 @@
                         <script>
                         function postToFacebook()
                         {
-                                var body = escapeHtml(document.getElementById("message").value);
-                                body = <?php echo htmlspecialchars(body); ?>
+                                var body = document.getElementById("message").value;
                                 var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
                                 FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
                                         if (!response || response.error) {
@@ -99,15 +98,6 @@
 
 </body>
 <footer>
-<script>
-function escapeHtml(text) {
-  return text;/*
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");*/
-}
-</script>
+
 </footer>
 </html>
