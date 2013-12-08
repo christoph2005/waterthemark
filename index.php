@@ -19,7 +19,12 @@
 			<br><input name='fileUpload' type="file"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
-<?php if ($_FILES["fileUpload"]["error"] > 0)
+
+		
+	<?php
+		if (defined($_FILES) && $_FILES["fileUpload"]): ?>
+			<script>console.log($_FILES['fileUpload'])</script>
+			<?php if ($_FILES["fileUpload"]["error"] > 0)
 			{
 				echo "Error: " . $_FILES["fileUpload"]["error"] . "<br>";
 			}
@@ -32,7 +37,9 @@
 				
 				// Note to self: $destpath junk can probably be tidied up a bit
 		 		$target_path = "uploads/";
-				$filename1 = strtolower(urlencode(basename($_FILES['fileUpload']['name'])));
+				$filename1 = urlencode(basename($_FILES['fileUpload']['name']));
+				$filename2 = uniqid();
+				echo 'alert('.$filename2.')';
 				$dest_path1 = $target_path . $filename1;
 				$dest_path2 = $target_path . 'tmarked.png';
 				if (!move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dest_path1))
@@ -46,11 +53,8 @@
 					echo '<image src="'.$dest_path2. '" width = "400"></image><br>';
 				}
 			}
-?>
-		
-	<?php	if (defined($_FILES) && $_FILES["fileUpload"]): ?>
-			<script>console.log($_FILES['fileUpload'])</script>
-			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
+		?>
+		<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
 	<?php else: ?>
 			<script>console.log("$_FILES undefined");</script>
 	<?php endif; ?>
