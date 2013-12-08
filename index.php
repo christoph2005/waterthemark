@@ -4,19 +4,7 @@
 <?php echo(file_get_contents('./javascript/FBLogin.js')); ?>
 <body>
 <!--Your Impelementation goes below here-->		
-<br></p><button onclick='
-function h(){
-	var body = 'Reading JS SDK documentation';
-	FB.api('/me/feed', 'post', { message: body }, function(response) {
-	  if (!response || response.error) {
-	    alert('Error occured');
-	  } else {
-	    alert('Post ID: ' + response.id);
-	  }
-	});
-};'>PUSH THIS BUTTON</button>
-
-
+<br></p><button onclick='f()'>PUSH THIS BUTTON</button>
 <br></p><button onclick='h()'>PUSH THIS BUTTON TO POST ON THE USERS FEED!!!!</button>
 
 <!-- A form to upload a picture -->		 
@@ -34,6 +22,27 @@ function h(){
 		<input type="submit" value="Post to Facebook!"/><br/>
 	</form>
 <script>
+function i(){
+	var urlOfPhoto = 'waterthemark.herokuapp.com/uploads/OrigLena.png';
+	var messageForPhoto = "I posted this using the javascript sdk and an FB.api CALL!";
+	FB.api('/me/photos', 'post', { url: urlOfPhoto, message: messageForPhoto}, function(response) {
+	  if (!response || response.error) {
+	    alert('Error occured');
+	  } else {
+	    alert('Post ID: ' + response.id);
+	  }
+	});
+};
+function h(){
+	var body = 'Reading JS SDK documentation';
+	FB.api('/me/feed', 'post', { message: body }, function(response) {
+	  if (!response || response.error) {
+	    alert('Error occured');
+	  } else {
+	    alert('Post ID: ' + response.id);
+	  }
+	});
+};
 function f(){
    FB.api('/me', function(response) {
       alert('Your name is ' + response.name);
