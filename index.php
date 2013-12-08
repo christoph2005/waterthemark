@@ -82,7 +82,7 @@
 				});
 			}
 			var b = document.getElementById("PostToFaceBook").disabled;
-			b.disabled = false;
+			b.removeAttribute("disabled");
 			b.onclick = "postToFacebook()";
 			</script>
 		<?php endif; ?>
