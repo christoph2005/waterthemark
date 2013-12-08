@@ -15,10 +15,14 @@
 <!--Your Impelementation goes below here-->
 <!-- A form to upload a picture -->		 
 	<form enctype="multipart/form-data" action="./uploader.php" method="POST">
-		Please choose a photo: <input name="source" type="file"><br/><br/>
+		Please choose a photo you would like to watermark:
+			<input name="fileUpload" type="file"><br/><br/>
 		<input type="submit" value="Upload"/><br/>
 	</form>
-	
+	<script> if ($_FILES) {</script>
+		<script>alert("HEY BUDDY");</script>
+	<script>};</script>
+		
 <!-- A form to generate an HTTP Post -->
 	<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">
 		<datalist>
