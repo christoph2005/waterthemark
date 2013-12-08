@@ -17,7 +17,24 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
-<button type="button" id="PostToFacebook" disabled>Post To Facebook!</button><br>
+<script>
+	function postToFacebook()
+	{
+		var body = '<?php echo $_POST["message"]?>';
+		var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
+		FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
+			if (!response || response.error) {
+		    	alert('Error occured: Probably not logged into Facebook');
+		    	console.log(response.error);
+		    	console.log(concat('URL:',surl));
+			} else {
+				alert('Post ID: ' + response.id);
+			}
+		});
+	}
+	document.getElementById("PostToFaceBook").removeAtribute("disabled");
+</script>
+<button type="button" id="PostToFacebook" onclick="postToFacebook()" disabled>Post To Facebook!</button><br>
 		
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
 		<script>console.log("$_FILES does not exist")</script>
@@ -61,31 +78,10 @@
 				echo '<image src="'.$dest_path1. '" style="max-height:300px;max-width:300px;"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" style="max-height:300px;max-width:300px;"></image><br>';
+				echo '<script>document.getElementById("PostToFaceBook").removeAtribute("disabled");</script>';
 				
 			}
 		}?>	
-		<?php
-		 if($_FILES["FU"]["name"]): ?>
-			<script>
-			function postToFacebook()
-			{
-				var body = '<?php echo $_POST["message"]?>';
-				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
-				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
-					if (!response || response.error) {
-				    	alert('Error occured: Probably not logged into Facebook');
-				    	console.log(response.error);
-				    	console.log(concat('URL:',surl));
-					} else {
-						alert('Post ID: ' + response.id);
-					}
-				});
-			}
-			var b = document.getElementById("PostToFaceBook").disabled;
-			b.removeAttribute("disabled");
-			b.onclick = "postToFacebook()";
-			</script>
-		<?php endif; ?>
 	<?php endif; ?>
 	
 <!-- A form to generate an HTTP Post -->
