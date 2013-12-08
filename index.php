@@ -17,8 +17,6 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
-		<?php $dest_path2;
-		 if($_FILES["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
 			{
@@ -36,8 +34,7 @@
 				});
 			}
 			</script>
-			<button type="button" onclick="postToFacebook()">Post To Facebook!</button><br>
-		<?php endif; ?>
+			<button type="button" onclick="postToFacebook()" visible="false">Post To Facebook!</button><br>
 		
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
 		<script>console.log("$_FILES does not exist")</script>
@@ -81,7 +78,6 @@
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
-				$_FILES["FU"]["tmp_name"] = $dest_path2;
 			}
 		}?>
 	<?php endif; ?>
