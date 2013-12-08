@@ -79,7 +79,7 @@
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
-				$_POST['dest']=$dest_path2;
+				$_POST["dest"]=$dest_path2;
 			}
 		}?>
 	<?php endif; ?>
