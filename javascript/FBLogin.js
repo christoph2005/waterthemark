@@ -15,7 +15,7 @@
   // whenever someone who was previously logged out tries to log in again, the correct case below 
   // will be handled. 
   FB.Event.subscribe('auth.authResponseChange', function(response) {
-    console.log(response);
+    console.log('FB.Event.Subscribe(): '.response);
     
     if (response.status === 'connected') {
       // The response object is returned with a status field that lets the app know the current
