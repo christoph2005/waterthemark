@@ -19,7 +19,7 @@
 			<br><input name="FU" type="file"><br><br>
 		<label for="message">Post image with message:</label>
 			<br><input name="message" type="text"><br><br>
-		<input type="submit" value="Upload Image For Watermarking"/><br>
+		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 	
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
@@ -75,7 +75,7 @@
 				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2; ?>';
 				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
 					if (!response || response.error) {
-				    	alert('Error occured');
+				    	alert('Error occured: Probably not logged into Facebook');
 					} else {
 						alert('Post ID: ' + response.id);
 					}
