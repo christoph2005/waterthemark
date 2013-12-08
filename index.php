@@ -37,8 +37,8 @@
 		
 		// Note to self: $destpath junk can probably be tidied up a bit
  		$target_path = "uploads/";
-		$fext = $userfile_extn = explode(".", strtolower($_FILES['FU']['name']));
-		echo 'alert('.$fext.')';
+		$fext = explode(".", strtolower($_FILES['FU']['name']));
+		echo 'alert('.$fext[size($fext)].')';
 		$filename1 = strtolower(urlencode(basename($_FILES['FU']['name'])));
 		$dest_path1 = $target_path . $filename1;
 		$dest_path2 = $target_path . 'tmarked.png';
@@ -49,7 +49,6 @@
 		else{
 			# Watermark the image
 			exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
-			
 			# echo final pathname of the unwatermarked image
 		    echo "Stored in: " .$dest_path1.'<br>';	  
 			# display the unwatermarked image
