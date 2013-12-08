@@ -18,7 +18,26 @@
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
 
-		
+	<?php
+	if($_FILES["FU"]["name"]): ?>
+		<script>
+		function postToFacebook()
+		{
+			var body = '<?php echo $_POST["message"]?>';
+			var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
+			FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
+				if (!response || response.error) {
+			    	alert('Error occured: Probably not logged into Facebook');
+			    	console.log(response.error);
+			    	console.log(concat('URL:',surl));
+				} else {
+					alert('Post ID: ' + response.id);
+				}
+			});
+		}
+		</script>
+		<button type="button" onclick="postToFacebook()">Post To Facebook!</button><br>
+	<?php endif; ?>
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
 		<script>console.log("$_FILES does not exist")</script>
 	<?php else: ?>
@@ -62,26 +81,8 @@
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
 			}
-		}?>		<?php
-		 if($_FILES["FU"]["name"]): ?>
-			<script>
-			function postToFacebook()
-			{
-				var body = '<?php echo $_POST["message"]?>';
-				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
-				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
-					if (!response || response.error) {
-				    	alert('Error occured: Probably not logged into Facebook');
-				    	console.log(response.error);
-				    	console.log(concat('URL:',surl));
-					} else {
-						alert('Post ID: ' + response.id);
-					}
-				});
-			}
-			</script>
-			<button type="button" onclick="postToFacebook()">Post To Facebook!</button><br>
-		<?php endif; ?>
+		}?>	
+
 	<?php endif; ?>
 	
 <!-- A form to generate an HTTP Post -->
