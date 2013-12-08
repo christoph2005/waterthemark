@@ -58,7 +58,7 @@
 				# echo final pathname of the watermarked image
 			    echo "Final watermarked path: " .$dest_path2.'<br>';	  
 				# display the unwatermarked image
-				echo '<image src="'.$dest_path1. '" style="max-height:400px;max-width=400px;"></image>';
+				echo '<image src="'.$dest_path1. '" style="max-height:400px;max-width:400px;"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
 			}
