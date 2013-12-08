@@ -7,7 +7,6 @@
     xfbml      : true  // parse XFBML
   });
 
-	FB.login(function(response){   /* handle the response*/}, {scope: 'publish_stream','photo_upload'});
   // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
   // for any authentication related change, such as login, logout or session refresh. This means that
   // whenever someone who was previously logged out tries to log in again, the correct case below 
@@ -16,7 +15,6 @@
     // Here we specify what we do with the response anytime this event occurs. 
     
     if (response.status === 'connected') {
-      FB.getAuthResponse()['message','source','method']
       // The response object is returned with a status field that lets the app know the current
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
@@ -25,7 +23,7 @@
       // In this case, the person is logged into Facebook, but not into the app, so we call
       // FB.login() to prompt them to do so. 
       // In real-life usage, you wouldn't want to immediately prompt someone to login 
-      // like this, for two reasons: 
+      // like this, for two reasons:
       // (1) JavaScript created popup windows are blocked by most browsers unless they 
       // result from direct interaction from people using the app (such as a mouse click)
       // (2) it is a bad experience to be continually prompted to login upon page load.
