@@ -21,8 +21,8 @@
 			<br><input name="message" type="text" value='<?php echo $_POST["message"]?>'><br><br>
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
-	
-		<?php if($watermarked): ?>
+
+		<?php if($_POST["isWatermarked"]): ?>
 			<script>
 			function postToFacebook()
 			{
@@ -39,6 +39,7 @@
 			</script>
 			<button type="button" onclick="postToFacebook()">Post to Facebook!</button>
 		<?php endif; ?>
+		
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
 		<script>console.log("$_FILES does not exist")</script>
 	<?php else: ?>
@@ -73,7 +74,7 @@
 			else{
 				# Watermark the image
 				exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
-				$watermarked = true;
+				$_POST["isWatermarked"] = true;
 				# echo final pathname of the unwatermarked image
 			    echo "Final unwatermarked path: " .$dest_path1.'<br>';	  
 				# echo final pathname of the watermarked image
