@@ -17,7 +17,8 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
-		<?php if($_FILES["FU"]["name"]): ?>
+		<?php $dest_path2;
+		 if($_FILES["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
 			{
@@ -28,6 +29,7 @@
 				    	alert('Error occured: Probably not logged into Facebook');
 				    	console.log(response.error);
 				    	console.log('URL:<?php echo $_POST["dest"]; ?>');
+				    	console.log('URL:<?php echo $_FILES["FU"]["tmp_name"]; ?>');
 					} else {
 						alert('Post ID: ' + response.id);
 					}
@@ -79,7 +81,7 @@
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
-				$_POST["dest"]=$dest_path2;
+				$_FILES["FU"]["tmp_name"] = $dest_path2;
 			}
 		}?>
 	<?php endif; ?>
