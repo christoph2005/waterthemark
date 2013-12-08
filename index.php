@@ -58,7 +58,7 @@
 	 		$target_path = "uploads/";
 				$fext = explode(".", strtolower($_FILES['FU']['name']));
 				$fext = '.'.$fext[sizeof($fext)-1];
-			$filename2 = uniqid().$fext;
+			$filename2 = 'watermarked'.uniqid().$fext;
 				$fext = null;
 			$filename1 = strtolower(urlencode(basename($_FILES['FU']['name'])));
 			$dest_path1 = $target_path . $filename1;
