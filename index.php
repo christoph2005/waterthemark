@@ -55,7 +55,9 @@
 				# Watermark the image
 				exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
 				# echo final pathname of the unwatermarked image
-			    echo "Stored in: " .$dest_path1.'<br>';	  
+			    echo "Final unwatermarked path: " .$dest_path1.'<br>';	  
+				# echo final pathname of the watermarked image
+			    echo "Final unwatermarked path: " .$dest_path2.'<br>';	  
 				# display the unwatermarked image
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
