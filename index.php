@@ -13,7 +13,7 @@
 		<label for="FU">Choose an image to watermark:</label>
 			<br><input name="FU" type="file"><br>
 		<label for="message">Post image with message:</label>
-			<input name="message" type="text" value='<?php echo $_POST["message"]?>'><br>
+			<input name="message" id="message" type="text" value='<?php echo $_POST["message"]?>'><br>
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
@@ -68,7 +68,7 @@
 			<script>
 			function postToFacebook()
 			{
-				var body = '<?php echo $_POST["message"]?>';
+				var body = document.getElementById("message").value;
 				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
 				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
 					if (!response || response.error) {
