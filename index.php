@@ -14,15 +14,16 @@
 
 <!--Your Impelementation goes below here-->
 <!-- A form to upload a picture -->		 
-	<form enctype="multipart/form-data" action="./index.php" method="POST">
+	<form id="UploadForm" enctype="multipart/form-data" action="./index.php" method="POST">
 		Please choose a photo you would like to watermark:
 			<br><input name="FU" type="file"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
+	<script>alert(document.getElementById("UploadForm")[0].value)</script>
 	<?php if ($_FILES && $_FILES["FU"]): ?>
 	<?php #Print information about the uploaded file
 	# If there were any errors in the file upload go here
-	if ($_FILES["FU"]["error"] > 0)
+	if ($_Files["FU"]["name"] && $_FILES["FU"]["error"] > 0)
 	{
 		echo "Error: " . $_FILES["FU"]["error"] . "<br>";
 	}
@@ -30,18 +31,20 @@
 	else
 	{
 		# Please print out information about the uploaded file
-		echo "Upload: " . $_FILES["FU"]["name"] . "<br>";
+		echo "Filename: " . $_FILES["FU"]["name"] . "<br>";
 		echo "Type: " . $_FILES["FU"]["type"] . "<br>";
 		echo "Size: " . ($_FILES["FU"]["size"] / 1024) . " kB<br>";
 		echo "Stored in: " . $_FILES["FU"]["tmp_name"] . "<br>";
 		
-		// Note to self: $destpath junk can probably be tidied up a bit
+		# Note to self: $destpath junk can probably be tidied up a bit
  		$target_path = "uploads/";
-		$fext = explode(".", strtolower($_FILES['FU']['name']));
-		echo 'alert('.$fext[sizeof($fext)-1].')';
+			$fext = explode(".", strtolower($_FILES['FU']['name']));
+			$fext = '.'.$fext[sizeof($fext)-1];
+		$filename2 = uniqid().$fext;
+			$fext = null;
 		$filename1 = strtolower(urlencode(basename($_FILES['FU']['name'])));
 		$dest_path1 = $target_path . $filename1;
-		$dest_path2 = $target_path . 'tmarked.png';
+		$dest_path2 = $target_path . $filename2;
 		# Try to move the file from /tmp to /uploads and print an error message on falure
 		if (!move_uploaded_file($_FILES['FU']['tmp_name'], $dest_path1))
 			echo '<h1>'.$_FILES["source"]["FU"].' failed to load!</h1>';
