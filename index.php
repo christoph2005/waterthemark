@@ -19,12 +19,7 @@
 			<br><input name='fileUpload' type="file"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
-
-		
-	<?php
-		if (defined($_FILES) && $_FILES["fileUpload"]): ?>
-			<script>console.log($_FILES['fileUpload'])</script>
-			<?php if ($_FILES["fileUpload"]["error"] > 0)
+<?php if ($_FILES["fileUpload"]["error"] > 0)
 			{
 				echo "Error: " . $_FILES["fileUpload"]["error"] . "<br>";
 			}
@@ -51,7 +46,10 @@
 					echo '<image src="'.$dest_path2. '" width = "400"></image><br>';
 				}
 			}
-		?>
+?>
+		
+	<?php	if (defined($_FILES) && $_FILES["fileUpload"]): ?>
+			<script>console.log($_FILES['fileUpload'])</script>
 			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
 	<?php else: ?>
 			<script>console.log("$_FILES undefined");</script>
