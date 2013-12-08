@@ -9,12 +9,8 @@
     cookie     : true, // enable cookies to allow the server to access the session
     xfbml      : true  // parse XFBML
   });
-  function sayMyName(){
-  	FB.api("/me",function(response){
-			alert(response.name);
-		});
-  };
-  sayMyName();
+  
+  
   // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
   // for any authentication related change, such as login, logout or session refresh. This means that
   // whenever someone who was previously logged out tries to log in again, the correct case below 
@@ -75,6 +71,11 @@
 <!--<?php #echo(file_get_contents('./javascript/FBLogin.js'));	?>-->
 <body>
 <!--Your Impelementation goes below here-->		
+<button onclick="function(){
+	FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});
+}">PUSH THIS BUTTON</button>
 <script>
 </script>
 </body>
