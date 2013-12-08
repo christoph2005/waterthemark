@@ -19,9 +19,9 @@
 			<br><input name="fileUpload" type="file"><br><br>
 		<input type="submit" value="Upload"/><br/>
 	</form>
-	<script> if ($_FILES['fileUpload']) {</script>
+	<?php if ($_FILES['fileUpload']): ?>
 		<image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
-	<script>};</script>
+	<?php endif; ?>
 		
 <!-- A form to generate an HTTP Post -->
 	<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">
