@@ -23,7 +23,7 @@
 		
 <?php
 	try {
-		if ($_FILES['fileUpload']){
+		if (defined($_FILES) && $_FILES['fileUpload']){
 			echo '<script>console.log($_FILES)</script>';
 			echo '<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>';
 		}	
