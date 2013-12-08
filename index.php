@@ -20,7 +20,7 @@
 		<input type="submit" value="Upload"/><br/>
 	</form>
 	<script> if ($_FILES['fileUpload']) {</script>
-		<script>alert("HEY BUDDY");</script>
+		<image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
 	<script>};</script>
 		
 <!-- A form to generate an HTTP Post -->
