@@ -17,7 +17,7 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
-
+<button type="button" id="PostToFacebook" disabled>Post To Facebook!</button><br>
 		
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
 		<script>console.log("$_FILES does not exist")</script>
@@ -61,6 +61,7 @@
 				echo '<image src="'.$dest_path1. '" style="max-height:300px;max-width:300px;"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" style="max-height:300px;max-width:300px;"></image><br>';
+				
 			}
 		}?>	
 		<?php
@@ -80,8 +81,10 @@
 					}
 				});
 			}
+			var b = document.getElementById("PostToFaceBook").disabled;
+			b.disabled = false;
+			b.onclick = "postToFacebook()";
 			</script>
-			<button type="button" onclick="postToFacebook()">Post To Facebook!</button><br>
 		<?php endif; ?>
 	<?php endif; ?>
 	
