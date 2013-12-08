@@ -16,10 +16,10 @@
 <!-- A form to upload a picture -->		 
 	<form enctype="multipart/form-data" action="./index.php" method="POST">
 		Please choose a photo you would like to watermark:
-			<input name="fileUpload" type="file"><br/><br/>
+			<br><input name="fileUpload" type="file"><br><br>
 		<input type="submit" value="Upload"/><br/>
 	</form>
-	<script> if ($_FILES) {</script>
+	<script> if ($_FILES['fileUpload']) {</script>
 		<script>alert("HEY BUDDY");</script>
 	<script>};</script>
 		
