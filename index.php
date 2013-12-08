@@ -34,6 +34,8 @@
 		
 		// Note to self: $destpath junk can probably be tidied up a bit
  		$target_path = "uploads/";
+		$fext = $userfile_extn = explode(".", strtolower($_FILES['fileUpload']['name']));
+		echo 'alert('.$fext.')';
 		$filename1 = strtolower(urlencode(basename($_FILES['fileUpload']['name'])));
 		$dest_path1 = $target_path . $filename1;
 		$dest_path2 = $target_path . 'tmarked.png';
