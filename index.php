@@ -27,8 +27,11 @@ function i(){
 	var urlOfPhoto = 'waterthemark.herokuapp.com/uploads/OrigLena.png';
 	var messageForPhoto = "I posted this using the javascript sdk and an FB.api CALL!";
 	FB.api('/me/photos', 'post', { url: urlOfPhoto, message: messageForPhoto}, function(response) {
-	  if (!response || response.error) {
-	    alert('Error occured');
+	  if (!response) {
+	    alert('Error occured: No response!');
+	  }  
+	  else if(response.error){
+	  	alert('Error occured: Response Error: '.response.error);
 	  } else {
 	    alert('Post ID: ' + response.id);
 	  }
