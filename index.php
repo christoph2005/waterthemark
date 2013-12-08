@@ -16,7 +16,7 @@
 <!-- A form to upload a picture -->		 
 	<form enctype="multipart/form-data" action="./index.php" method="POST">
 		Please choose a photo you would like to watermark:
-			<br><input name="fileUpload" type="file"><br><br>
+			<br><input name='fileUpload' type="file"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
 
@@ -37,9 +37,7 @@
 				
 				// Note to self: $destpath junk can probably be tidied up a bit
 		 		$target_path = "uploads/";
-				$filename1 = urlencode(basename($_FILES['fileUpload']['name']));
-				$filename2 = uniqid();
-				echo 'alert('.$filename2.')';
+				$filename1 = strtolower(urlencode(basename($_FILES['fileUpload']['name'])));
 				$dest_path1 = $target_path . $filename1;
 				$dest_path2 = $target_path . 'tmarked.png';
 				if (!move_uploaded_file($_FILES['fileUpload']['tmp_name'], $dest_path1))
@@ -54,7 +52,7 @@
 				}
 			}
 		?>
-		<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
+			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
 	<?php else: ?>
 			<script>console.log("$_FILES undefined");</script>
 	<?php endif; ?>
