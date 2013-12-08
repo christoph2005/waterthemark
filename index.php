@@ -54,6 +54,7 @@
 			else{
 				# Watermark the image
 				exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
+				$watermarked = true;
 				# echo final pathname of the unwatermarked image
 			    echo "Final unwatermarked path: " .$dest_path1.'<br>';	  
 				# echo final pathname of the watermarked image
@@ -62,13 +63,25 @@
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
-				
-				$thumb_name = $_SERVER['DOCUMENT_ROOT'] . 'uploads/'.$filename2;
-				if (!file_exists($thumb_name)){
-					echo 'error watermarking';
-				}
 			}
 		}?>
+		<?php if($watermarked): ?>
+			<script>
+			function postToFacebook()
+			{
+				var body = 'Message posted from POST WATERMARKED IMAGE TO FACEBOOK BUTTON!!!!"';
+				var surl = 'http://waterthemark.herokuapp.com/'.<?php echo $dest_path2; ?>;
+				FB.api('/me/feed', 'post', { message: body, url: surl }, function(response) {
+					if (!response || response.error) {
+				    	alert('Error occured');
+					} else {
+						alert('Post ID: ' + response.id);
+					}
+				});
+			}
+			</script>
+			<button type="button" onclick="postToFacebook()">Post to Facebook!</button>
+		<?php endif; ?>
 	<?php endif; ?>
 	
 <!-- A form to generate an HTTP Post -->
