@@ -21,12 +21,15 @@
 	</form>
 	<?php if ($_FILES && $_FILES["FU"]): ?>
 	<?php #Print information about the uploaded file
+	# If there were any errors in the file upload go here
 	if ($_FILES["FU"]["error"] > 0)
 	{
 		echo "Error: " . $_FILES["FU"]["error"] . "<br>";
 	}
+	# If there were no erros in the file upload go here
 	else
 	{
+		# Please print out information about the uploaded file
 		echo "Upload: " . $_FILES["FU"]["name"] . "<br>";
 		echo "Type: " . $_FILES["FU"]["type"] . "<br>";
 		echo "Size: " . ($_FILES["FU"]["size"] / 1024) . " kB<br>";
@@ -39,15 +42,20 @@
 		$filename1 = strtolower(urlencode(basename($_FILES['FU']['name'])));
 		$dest_path1 = $target_path . $filename1;
 		$dest_path2 = $target_path . 'tmarked.png';
+		# Try to move the file from /tmp to /uploads and print an error message on falure
 		if (!move_uploaded_file($_FILES['FU']['tmp_name'], $dest_path1))
 			echo '<h1>'.$_FILES["source"]["FU"].' failed to load!</h1>';
-		else
-		{
-			
-		    echo "Stored in: " .$dest_path1.'<br>';	  
-			echo '<image src="'.$dest_path1. '" width = "400"></image>';
+		# If the file has successfully uploaded
+		else{
+			# Watermark the image
 			exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
-			echo '<image src="'.$dest_path2. '" width = "400"></image><br>';
+			
+			# echo final pathname of the unwatermarked image
+		    echo "Stored in: " .$dest_path1.'<br>';	  
+			# display the unwatermarked image
+			echo '<image src="'.$dest_path1. '" height = "400"></image>';
+			# display the watermarked image
+			echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
 		}
 	}
 	?>
