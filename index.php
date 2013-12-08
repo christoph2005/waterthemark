@@ -101,12 +101,12 @@
 <footer>
 <script>
 function escapeHtml(text) {
-  return text
+  return text;/*
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+      .replace(/'/g, "&#039;");*/
 }
 </script>
 </footer>
