@@ -3,25 +3,7 @@
 <header><div id="fb-root"></div></header>
 <?php echo(file_get_contents('./javascript/FBLogin.js')); ?>
 <body>
-<!--Your Impelementation goes below here-->		
-<br></p><button onclick='f()'>PUSH THIS BUTTON</button>
-<br></p><button onclick='h()'>PUSH THIS BUTTON TO POST ON THE USERS FEED!!!!</button>
-<br></p><button onclick='i()'>PUSH THIS BUTTON TO POST A PHOTO!!!!</button>
-
-<!-- A form to upload a picture -->		 
-	<form enctype="multipart/form-data" action="./index.php" method="POST">
-		Please choose a photo: <input name="source" type="file"><br/><br/>
-		<input type="submit" value="Upload"/><br/>
-	</form>
-	
-<!-- A form to generate an HTTP Post -->
-	<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">
-		<datalist>
-		<option name="source" type="file" value="'.$_POST["source"].'"></option>
-		</datalist>
-		Say something about this photo: <input name="message" type="text" value=""><br/><br/>
-		<input type="submit" value="Post to Facebook!"/><br/>
-	</form>
+<!-- Debug Code -->
 <script>
 var G;
 function i(){
@@ -54,7 +36,34 @@ function f(){
       alert('Your name is ' + response.name);
    });
 };
-</script>
+</script>		
+<br></p><button onclick='f()'>PUSH THIS BUTTON</button>
+<br></p><button onclick='h()'>PUSH THIS BUTTON TO POST ON THE USERS FEED!!!!</button>
+<br></p><button onclick='i()'>PUSH THIS BUTTON TO POST A PHOTO!!!!</button>
+
+
+
+
+
+
+
+
+<!--Your Impelementation goes below here-->
+<!-- A form to upload a picture -->		 
+	<form enctype="multipart/form-data" action="./uploader.php" method="POST">
+		Please choose a photo: <input name="source" type="file"><br/><br/>
+		<input type="submit" value="Upload"/><br/>
+	</form>
+	
+<!-- A form to generate an HTTP Post -->
+	<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">
+		<datalist>
+		<option name="source" type="file" value="'.$_POST["source"].'"></option>
+		</datalist>
+		Say something about this photo: <input name="message" type="text" value=""><br/><br/>
+		<input type="submit" value="Post to Facebook!"/><br/>
+	</form>
+
 </body>
 <footer>
 
