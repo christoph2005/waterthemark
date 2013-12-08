@@ -16,7 +16,7 @@
 <!-- A form to upload a picture -->		 
 	<form enctype="multipart/form-data" action="./index.php" method="POST">
 		Please choose a photo you would like to watermark:
-			<br><input name='fileUpload' type="file"><br><br>
+			<br><input name="fileUpload" type="file"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
 
