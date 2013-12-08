@@ -19,10 +19,16 @@
 			<br><input name="fileUpload" type="file"><br><br>
 		<input type="submit" value="Upload"/><br/>
 	</form>
-	<?php if (isset($_FILES) && $_FILES['fileUpload']): ?>
+	
+		
+	<?php try {
+		if (isset($_FILES) && $_FILES['fileUpload']): ?>
 		<script>console.log($_FILES)</script>
 		<image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
-	<?php endif; ?>
+	<?php endif; 
+	}catch(Exception $e){
+		console.log('$_FILES not found');
+	} ?>
 		
 <!-- A form to generate an HTTP Post -->
 	<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">
