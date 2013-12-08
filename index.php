@@ -23,7 +23,7 @@
 			function postToFacebook()
 			{
 				var body = '<?php echo $_POST["message"]?>';
-				var surl = 'http://waterthemark.herokuapp.com/<?php echo $_POST["dest"]; ?>';
+				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2;?>';
 				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
 					if (!response || response.error) {
 				    	alert('Error occured: Probably not logged into Facebook');
