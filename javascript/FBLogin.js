@@ -7,6 +7,7 @@
     xfbml      : true  // parse XFBML
   });
 
+	FB.login(function(response){   /* handle the response*/}, {scope: 'user_friends','create_note','photo_upload','publish_stream','publish_actions','status_update','share_item','video_upload'});
   // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
   // for any authentication related change, such as login, logout or session refresh. This means that
   // whenever someone who was previously logged out tries to log in again, the correct case below 
@@ -15,6 +16,7 @@
     // Here we specify what we do with the response anytime this event occurs. 
     
     if (response.status === 'connected') {
+      FB.getAuthResponse()['message','source','method']
       // The response object is returned with a status field that lets the app know the current
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
