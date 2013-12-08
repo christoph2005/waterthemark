@@ -8,7 +8,7 @@
   });
 
   function login(){
-  	FB.login(function(response){   /* handle the response*/}, {scope: 'publish_stream,photo_upload'});
+  	FB.login(function(response){   /* handle the response*/}, {scope: 'publish_stream,photo_upload,publish_actions'});
   };
   // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
   // for any authentication related change, such as login, logout or session refresh. This means that

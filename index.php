@@ -40,7 +40,7 @@ function i(){
 	});
 };
 function h(){
-	var body = 'Reading JS SDK documentation';
+	var body = 'Message posted from but button that says: "PUSH THIS BUTTON TO POST ON THE USERS FEED!!!!"';
 	FB.api('/me/feed', 'post', { message: body }, function(response) {
 	  if (!response || response.error) {
 	    alert('Error occured');
