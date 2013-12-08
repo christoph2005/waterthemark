@@ -31,7 +31,7 @@ function i(){
 	    alert('Error occured: No response!');
 	  }  
 	  else if(response.error){
-	  	alert('Error occured: Response Error: '.response.toString());
+	  	alert('Error occured: Response Error: And I can\'t figure it out');
 	  } else {
 	    alert('Post ID: ' + response.id);
 	  }
