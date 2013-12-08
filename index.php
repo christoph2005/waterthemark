@@ -71,7 +71,7 @@
 			<script>
 			function postToFacebook()
 			{
-				var body = <?php echo $_POST["message"]?>;
+				var body = '<?php echo $_POST["message"]?>';
 				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2; ?>';
 				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
 					if (!response || response.error) {
