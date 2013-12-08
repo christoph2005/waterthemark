@@ -27,7 +27,7 @@
 					if (!response || response.error) {
 				    	alert('Error occured: Probably not logged into Facebook');
 				    	console.log(response.error);
-				    	console.log(<?php echo $_POST["dest"]; ?>);
+				    	console.log('URL:<?php echo $_POST["dest"]; ?>');
 					} else {
 						alert('Post ID: ' + response.id);
 					}
