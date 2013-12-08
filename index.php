@@ -4,6 +4,7 @@
 <?php echo(file_get_contents('./javascript/FBLogin.js')); ?>
 <body>
 <!-- Debug Code -->
+<--[[>
 <script>
 var G;
 function i(){
@@ -40,7 +41,7 @@ function f(){
 <br></p><button onclick='f()'>PUSH THIS BUTTON</button>
 <br></p><button onclick='h()'>PUSH THIS BUTTON TO POST ON THE USERS FEED!!!!</button>
 <br></p><button onclick='i()'>PUSH THIS BUTTON TO POST A PHOTO!!!!</button>
-
+<--]]>
 
 
 
