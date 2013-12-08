@@ -4,7 +4,7 @@
 <?php echo(file_get_contents('./javascript/FBLogin.js')); ?>
 <body>
 <!-- Debug Code -->
-<?php echo(file_get_contents('./javascript/debugcode.php')); ?>
+<?php #echo(file_get_contents('./javascript/debugcode.php')); ?>
 
 
 
