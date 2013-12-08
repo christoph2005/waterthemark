@@ -21,16 +21,10 @@
 	</form>
 	
 		
-<?php
-	try {
-		if (defined($_FILES) && $_FILES['fileUpload']){
-			echo '<script>console.log($_FILES)</script>';
-			echo '<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>';
-		}	
-	}catch (Exception $e){
-		console.log('$_FILES not found');
-	}
-?>
+<?php	if (defined($_FILES) && $_FILES['fileUpload']): ?>
+			<script>console.log($_FILES)</script>
+			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
+<?php 	endif; ?>
 		
 <!-- A form to generate an HTTP Post -->
 	<form enctype="multipart/form-data" action="'.$graph_url.'" method="POST">
