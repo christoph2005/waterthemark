@@ -22,7 +22,7 @@
 	
 		
 <?php	if (defined($_FILES) && $_FILES['fileUpload']): ?>
-			<script>console.log($_FILES)</script>
+			<script>console.log($_FILES['fileUpload'])</script>
 			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
 <?php 	endif; ?>
 		
