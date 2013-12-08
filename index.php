@@ -23,6 +23,7 @@
 		<input type="submit" value="Post to Facebook!"/><br/>
 	</form>
 <script>
+var G;
 function i(){
 	var urlOfPhoto = 'waterthemark.herokuapp.com/uploads/OrigLena.png';
 	var messageForPhoto = "I posted this using the javascript sdk and an FB.api CALL!";
@@ -31,7 +32,8 @@ function i(){
 	    alert('Error occured: No response!');
 	  }  
 	  else if(response.error){
-	  	alert('Error occured: Response Error: And I can\'t figure it out');
+	  	alert('Error occured: Response Error: And I can\'t figure it out, but it\'s in G object');
+	  	G = response.error;
 	  } else {
 	    alert('Post ID: ' + response.id);
 	  }
