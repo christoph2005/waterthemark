@@ -16,9 +16,9 @@
 <!-- A form to upload a picture -->		 
 	<form id="UploadForm" enctype="multipart/form-data" action="./index.php" method="POST">
 		<label for="FU">Please choose a photo you would like to watermark:</label>
-			<br><input name="FU" type="file" value='<?php echo $_FILES["FU"]["name"]?>'><br><br>
+			<input name="FU" type="file" value='<?php echo $_FILES["FU"]["name"]?>'><br>
 		<label for="message">Post image with message:</label>
-			<br><input name="message" type="text" value='<?php echo $_POST["message"]?>'><br><br>
+			<input name="message" type="text" value='<?php echo $_POST["message"]?>'><br>
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
