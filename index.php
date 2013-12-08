@@ -71,12 +71,13 @@
 <!--<?php #echo(file_get_contents('./javascript/FBLogin.js'));	?>-->
 <body>
 <!--Your Impelementation goes below here-->		
-<button onclick="function(){
-	FB.api('/me', function(response) {
-  alert('Your name is ' + response.name);
-});
-}">PUSH THIS BUTTON</button>
+<button onclick='f()'>PUSH THIS BUTTON</button>
 <script>
+function f(){
+   FB.api('/me', function(response) {
+      alert('Your name is ' + response.name);
+   });
+}
 </script>
 </body>
 <footer>
