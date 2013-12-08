@@ -32,7 +32,7 @@
 			}
 		});
 	}
-	document.getElementById("PostToFaceBook").removeAtribute("disabled");
+	document.getElementById("PostToFaceBook").removeAttribute("disabled");
 </script>
 <button type="button" id="PostToFacebook" onclick="postToFacebook()" disabled>Post To Facebook!</button><br>
 		
@@ -78,7 +78,7 @@
 				echo '<image src="'.$dest_path1. '" style="max-height:300px;max-width:300px;"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" style="max-height:300px;max-width:300px;"></image><br>';
-				echo '<script>document.getElementById("PostToFaceBook").removeAtribute("disabled");</script>';
+				echo '<script>document.getElementById("PostToFaceBook").removeAttribute("disabled");</script>';
 				
 			}
 		}?>	
