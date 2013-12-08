@@ -17,17 +17,17 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
-		<?php if($dest_path2 && $_FILES["FU"]["name"]): ?>
+		<?php if($_POST["dest"] && $_FILES["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
 			{
 				var body = '<?php echo $_POST["message"]?>';
-				var surl = 'http://waterthemark.herokuapp.com/<?php echo $dest_path2; ?>';
+				var surl = 'http://waterthemark.herokuapp.com/<?php echo $_POST["dest"]; ?>';
 				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
 					if (!response || response.error) {
 				    	alert('Error occured: Probably not logged into Facebook');
 				    	console.log(response.error);
-				    	console.log(<?php echo $dest_path2; ?>);
+				    	console.log(<?php echo $_POST["dest"]; ?>);
 					} else {
 						alert('Post ID: ' + response.id);
 					}
@@ -79,6 +79,7 @@
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
+				$_POST['dest']=$dest_path2;
 			}
 		}?>
 	<?php endif; ?>
