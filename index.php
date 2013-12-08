@@ -15,8 +15,10 @@
 <!--Your Impelementation goes below here-->
 <!-- A form to upload a picture -->		 
 	<form id="UploadForm" enctype="multipart/form-data" action="./index.php" method="POST">
-		Please choose a photo you would like to watermark:
+		<label for="FU">Please choose a photo you would like to watermark:</label>
 			<br><input name="FU" type="file"><br><br>
+		<label for="message">Post image with message:</label>
+			<br><input name="message" type="text"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
 	
