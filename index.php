@@ -25,7 +25,7 @@
 			<script>console.log($_FILES['fileUpload'])</script>
 			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
 	<?php else: ?>
-			console.log("$_FILES undefined"); 	
+			<script>console.log("$_FILES undefined");</script>
 	<?php endif; ?>
 		
 <!-- A form to generate an HTTP Post -->
