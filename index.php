@@ -34,6 +34,7 @@ function i(){
 	  else if(response.error){
 	  	alert('Error occured: Response Error: And I can\'t figure it out, but it\'s in G object');
 	  	console.log(response.error);
+	  	console.log(FB.getAuthResponse('AccessToken'));
 	  } else {
 	    alert('Post ID: ' + response.id);
 	  }
