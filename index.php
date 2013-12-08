@@ -21,7 +21,7 @@
 	</form>
 	
 	<?php #Print information about the uploaded file
-	if ($_FILES["fileUpload"]["error"] > 0)
+	if (defined($_FILES) && $_Files && $_FILES["fileUpload"]["error"] > 0)
 	{
 		echo "Error: " . $_FILES["fileUpload"]["error"] . "<br>";
 	}
@@ -51,13 +51,6 @@
 		}
 	}
 	?>
-			
-	<?php	if (defined($_FILES) && $_FILES["fileUpload"]): ?>
-			<script>console.log($_FILES['fileUpload'])</script>
-			<br><image src="http://waterthemark.herokuapp.com/uploads/OrigLena.png"></image>
-	<?php else: ?>
-			<script>console.log("$_FILES undefined");</script>
-	<?php endif; ?>
 	
 <!-- A form to generate an HTTP Post -->
 <!--
