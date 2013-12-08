@@ -25,14 +25,13 @@
 <script>
 var G;
 function i(){
-	var urlOfPhoto = 'waterthemark.herokuapp.com/uploads/OrigLena.png';
+	var urlOfPhoto = 'http://waterthemark.herokuapp.com/uploads/OrigLena.png';
 	var messageForPhoto = "I posted this using the javascript sdk and an FB.api CALL!";
 	FB.api('/me/photos', 'post', { url: urlOfPhoto, message: messageForPhoto}, function(response) {
 	  if (!response) {
 	    alert('Error occured: No response!');
 	  }  
 	  else if(response.error){
-	  	alert('Error occured: Response Error: And I can\'t figure it out, but it\'s in G object');
 	  	console.log(response.error);
 	  	console.log(FB.getAuthResponse('AccessToken'));
 	  } else {
