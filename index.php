@@ -60,7 +60,7 @@
 				# display the unwatermarked image
 				echo '<image src="'.$dest_path1. '" style="max-height:300px;max-width:300px;"></image>';
 				# display the watermarked image
-				echo '<image src="'.$dest_path2. '" style="max-height:300px;max-width:300px;></image><br>';
+				echo '<image src="'.$dest_path2. '" style="max-height:300px;max-width:300px;"></image><br>';
 			}
 		}?>	
 		<?php
