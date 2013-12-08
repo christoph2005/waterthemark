@@ -6,6 +6,7 @@
 <!--Your Impelementation goes below here-->		
 <br></p><button onclick='f()'>PUSH THIS BUTTON</button>
 <br></p><button onclick='h()'>PUSH THIS BUTTON TO POST ON THE USERS FEED!!!!</button>
+<br></p><button onclick='i()'>PUSH THIS BUTTON TO POST A PHOTO!!!!</button>
 
 <!-- A form to upload a picture -->		 
 	<form enctype="multipart/form-data" action="./index.php" method="POST">
