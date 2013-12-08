@@ -57,11 +57,15 @@
 				# echo final pathname of the unwatermarked image
 			    echo "Final unwatermarked path: " .$dest_path1.'<br>';	  
 				# echo final pathname of the watermarked image
-			    echo "Final unwatermarked path: " .$dest_path2.'<br>';	  
+			    echo "Final watermarked path: " .$dest_path2.'<br>';	  
 				# display the unwatermarked image
 				echo '<image src="'.$dest_path1. '" height = "400"></image>';
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
+				
+				if (!file_exists($dest_Path2)){
+					echo 'error watermarking';
+				}
 			}
 		}?>
 	<?php endif; ?>
