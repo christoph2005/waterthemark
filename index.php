@@ -63,7 +63,8 @@
 				# display the watermarked image
 				echo '<image src="'.$dest_path2. '" height = "400"></image><br>';
 				
-				if (!file_exists($dest_Path2)){
+				$thumb_name = $_SERVER['DOCUMENT_ROOT'] . 'uploads/'.$filename2;
+				if (!file_exists($thumb_name)){
 					echo 'error watermarking';
 				}
 			}
