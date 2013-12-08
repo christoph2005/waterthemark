@@ -27,6 +27,7 @@
 					if (!response || response.error) {
 				    	alert('Error occured: Probably not logged into Facebook');
 				    	console.log(response.error);
+				    	console.log(<?php echo $dest_path2; ?>);
 					} else {
 						alert('Post ID: ' + response.id);
 					}
@@ -58,7 +59,7 @@
 	 		$target_path = "uploads/";
 				$fext = explode(".", strtolower($_FILES['FU']['name']));
 				$fext = '.'.$fext[sizeof($fext)-1];
-			$filename2 = 'watermarked'.uniqid().$fext;
+			$filename2 = 'wm'.uniqid().$fext;
 				$fext = null;
 			$filename1 = strtolower(urlencode(basename($_FILES['FU']['name'])));
 			$dest_path1 = $target_path . $filename1;
