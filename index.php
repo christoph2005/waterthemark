@@ -33,7 +33,7 @@ function i(){
 	  }  
 	  else if(response.error){
 	  	alert('Error occured: Response Error: And I can\'t figure it out, but it\'s in G object');
-	  	G = response.error;
+	  	console.log(response);
 	  } else {
 	    alert('Post ID: ' + response.id);
 	  }
