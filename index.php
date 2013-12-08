@@ -19,9 +19,9 @@
 			<br><input name="fileUpload" type="file"><br><br>
 		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
-	
+	<?php if (defined($_FILES)): ?>
 	<?php #Print information about the uploaded file
-	if (defined($_FILES) && $_Files && $_FILES["fileUpload"]["error"] > 0)
+	if ($_FILES["fileUpload"]["error"] > 0)
 	{
 		echo "Error: " . $_FILES["fileUpload"]["error"] . "<br>";
 	}
@@ -51,6 +51,7 @@
 		}
 	}
 	?>
+	<?php endif; ?>
 	
 <!-- A form to generate an HTTP Post -->
 <!--
