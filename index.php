@@ -22,7 +22,7 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 
-		<?php if($_POST["isWatermarked"]): ?>
+		<?php if($_Files["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
 			{
@@ -74,7 +74,6 @@
 			else{
 				# Watermark the image
 				exec('java -cp uploads/ -jar uploads/dct-watermark-rev24.jar e -d '.$dest_path1.' '.$dest_path2.' "Hello World"');
-				$_POST["isWatermarked"] = true;
 				# echo final pathname of the unwatermarked image
 			    echo "Final unwatermarked path: " .$dest_path1.'<br>';	  
 				# echo final pathname of the watermarked image
