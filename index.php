@@ -17,7 +17,7 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 <!-- Show a Post To Facebook button if you find an uploaded filename -->
-		<?php if($_FILES["FU"]["name"]): ?>
+		<?php if($dest_path2 && $_FILES["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
 			{
