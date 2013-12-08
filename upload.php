@@ -31,6 +31,7 @@
 				FB.api('/me/photos', 'post', { message: body, url: surl }, function(response) {
 					if (!response || response.error) {
 				    	alert('Error occured: Probably not logged into Facebook');
+				    	login();
 					} else {
 						alert('Post ID: ' + response.id);
 					}
