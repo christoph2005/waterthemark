@@ -22,7 +22,7 @@
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
 
-		<?php if($_Files["FU"]["name"]): ?>
+		<?php if($_FILES["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
 			{
