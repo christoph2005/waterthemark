@@ -21,7 +21,7 @@
 			<br><input name="message" type="text" value='<?php echo $_POST["message"]?>'><br><br>
 		<input type="submit" value="Watermark this image!"/><br>
 	</form>
-
+<!-- Show a Post To Facebook button if you find an uploaded filename -->
 		<?php if($_FILES["FU"]["name"]): ?>
 			<script>
 			function postToFacebook()
@@ -37,7 +37,7 @@
 				});
 			}
 			</script>
-			<button type="button" onclick="postToFacebook()">Post to Facebook!</button>
+			<button type="button" onclick="postToFacebook()">Post To Facebook!</button><br>
 		<?php endif; ?>
 		
 	<?php if (!$_FILES || !$_FILES["FU"]): ?>
