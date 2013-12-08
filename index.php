@@ -1,7 +1,7 @@
 <!Doctype html>
 <head></head>
-<header><div id="fb-root"></div></header>
-<?php echo(file_get_contents('./javascript/FBLogin.js')); ?>
+<header></header>
+<?php echo(file_get_contents('./javascript/FBLogin.php')); ?>
 <body>
 <!-- Debug Code -->
 <?php #echo(file_get_contents('./javascript/debugcode.php')); ?>
@@ -16,8 +16,8 @@
 <!-- A form to upload a picture -->		 
 	<form enctype="multipart/form-data" action="./index.php" method="POST">
 		Please choose a photo you would like to watermark:
-			<br><input name="fileUpload" type="file"><br><br>
-		<input type="submit" value="Upload"/><br/>
+			<br><input name='fileUpload' type="file"><br><br>
+		<input type="submit" value="Upload Image For Watermarking"/><br>
 	</form>
 	
 		
