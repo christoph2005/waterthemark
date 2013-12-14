@@ -17,7 +17,7 @@ Phase one: Create a Facebook application
     Details for the last two steps can be found here < https://developers.facebook.com/docs/opengraph/getting-started/#prerequisites >
 IMPORTANT: You will need the Facebook App ID to configure the web app
   Copy this to your clipboard
-    
+
 Phase Two: Host the web app on a web server 
   Download the repository from github < https://github.com/christoph2005/waterthemark >
   In the uploads/FBLogin.php file in the method FB.init() Set the App ID to your App ID from phase one
@@ -26,16 +26,16 @@ Phase Two: Host the web app on a web server
 IMPORTANT: You will need the url of your heroku web app for phase three
   Find the url of your heroku web app from the settings page for your app on heroku.com
     Copy this url to your clipboard.
-  
+
 Phase three: Link your Facebook application to your heroku web app
   Log into Facebook using your developer account
     Click on the settings icon
-      Click on Manage Apps
-        Click on your application in the navigation bar on the left
-          Click on Edit Settings ( for your Facebook application )
-  The page should refresh and show you configuration information for your facebook webapp
-  Under the section that says "Select how your app integrates with Facebook"
-    Select App on Facebook.
+    Click on Manage Apps
+    Click on your application in the navigation bar on the left
+    Click on Edit Settings ( for your Facebook application )
+      The page should refresh and show you configuration information for your facebook webapp
+      Under the section that says "Select how your app integrates with Facebook"
+      Select App on Facebook.
       Paste the url of your heroku web app (from phase two) into the boxes for:
         Canvas URL:
         Secure Canvas URL:
@@ -44,7 +44,7 @@ Phase three: Link your Facebook application to your heroku web app
           Canvas URL: http://waterthemark.herokuapp.com/
           Secure Canvas URL https://waterthemark.herokuapp.com/
       Save these settings
-
+      
 Your app should be visible now on your "Facebook Canvas Page"
           
   
