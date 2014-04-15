@@ -3,7 +3,7 @@ waterthemark
 
 A facebook application to automatically watermark images and upload them to your facebook photos
 
-Necessary Components: "Included in the reponsitory"
+Necessary Components: "Included in the repository"
 index.php
 /uploads/watermark-dct.jar
 /javascript/FBLogin.php
